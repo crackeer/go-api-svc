@@ -1,0 +1,4 @@
+port: 8888
+page_size: 20
+env: "develop"
+database_conf_dir: "./config/database"
