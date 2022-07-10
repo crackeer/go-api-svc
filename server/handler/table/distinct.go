@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// Distinct
+// Distinct ...
 //  @param ctx
 func Distinct(ctx *gin.Context) {
 	tableObj, err := getTableObject(ctx)

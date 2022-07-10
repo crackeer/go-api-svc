@@ -7,19 +7,25 @@ import (
 	"github.com/crackeer/gopkg/config"
 	"github.com/crackeer/gopkg/storage"
 	"github.com/crackeer/gopkg/util"
+
+	// _ sqlite3 drive
 	_ "github.com/mattn/go-sqlite3"
 	"gorm.io/gorm"
 )
 
 var (
 
-	// DBMap
-	ReadDB   map[string]*gorm.DB
-	WriteDB  map[string]*gorm.DB
+	// ReadDB DBMap
+	ReadDB map[string]*gorm.DB
+
+	// WriteDB ...
+	WriteDB map[string]*gorm.DB
+
+	// DBDriver ...
 	DBDriver map[string]string
 )
 
-// InitDB
+// InitDB ...
 //  @param sqliteDBFile
 //  @param boltDBFile
 func InitDB(dir string, env string) error {
@@ -28,7 +34,6 @@ func InitDB(dir string, env string) error {
 	WriteDB = map[string]*gorm.DB{}
 	DBDriver = map[string]string{}
 	fileList := util.GetFiles(dir)
-	fmt.Println(dir, env, fileList)
 	for _, file := range fileList {
 		if !strings.HasSuffix(file, config.YamlExt) {
 			continue
@@ -108,18 +113,17 @@ func openDB(conf *config.DBConfig, name string) (*gorm.DB, *gorm.DB, error) {
 	return readDB, writeDB, nil
 }
 
-// GetWriteDB
+// GetWriteDB ...
 //  @param name
 //  @return *gorm.DB
 func GetWriteDB(name string) *gorm.DB {
-	fmt.Println("GetWriteDB", name, WriteDB[name])
 	if db, exists := WriteDB[name]; exists {
 		return db
 	}
 	return nil
 }
 
-// GetReadDB
+// GetReadDB ...
 //  @param name
 //  @return *gorm.DB
 func GetReadDB(name string) *gorm.DB {
@@ -129,6 +133,8 @@ func GetReadDB(name string) *gorm.DB {
 	return nil
 }
 
+// GetDatabase ...
+//  @return *gorm.DB
 func GetDatabase() *gorm.DB {
 	return nil
 }

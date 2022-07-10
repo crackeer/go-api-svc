@@ -8,7 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// List
+// List ...
 //  @param ctx
 func List(ctx *gin.Context) {
 	tableObj, err := getTableObject(ctx)

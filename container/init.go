@@ -6,7 +6,7 @@ import (
 	"github.com/crackeer/go-api-svc/define"
 )
 
-// Init
+// Init ...
 //  @param configPath
 //  @return error
 func Init(configPath string) error {
@@ -21,7 +21,7 @@ func Init(configPath string) error {
 	return nil
 }
 
-// GetAppConfig
+// GetAppConfig ...
 //  @return *define.AppConfig
 func GetAppConfig() *define.AppConfig {
 	return AppConfig

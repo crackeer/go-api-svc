@@ -8,7 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// Delete
+// Delete ...
 //  @param ctx
 func Delete(ctx *gin.Context) {
 	tableObj, err := getTableObject(ctx)

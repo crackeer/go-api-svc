@@ -4,7 +4,6 @@ import (
 	"fmt"
 
 	"github.com/crackeer/go-api-svc/define"
-	"github.com/crackeer/go-api-svc/server/handler"
 	"github.com/crackeer/go-api-svc/server/handler/database"
 	"github.com/crackeer/go-api-svc/server/handler/table"
 	ginhelper "github.com/crackeer/gopkg/gin"
@@ -24,8 +23,6 @@ func Run(config *define.AppConfig) error {
 	dbRouter.GET("distinct/:table", table.Distinct)
 	dbRouter.POST("exec/sql", database.Exec)
 	dbRouter.GET("tables", database.Tables)
-
-	router.POST("file/upload", handler.UploadObject)
 
 	return router.Run(fmt.Sprintf(":%d", config.Port))
 }

@@ -5,7 +5,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// Query
+// Query ...
 //  @param ctx
 func Query(ctx *gin.Context) {
 	tableObj, err := getTableObject(ctx)

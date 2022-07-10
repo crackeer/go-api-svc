@@ -5,9 +5,10 @@ import (
 	"github.com/crackeer/gopkg/config"
 )
 
+// AppConfig appconfig
 var AppConfig *define.AppConfig
 
-// InitConfig
+// InitConfig ...
 //  @param configPath
 //  @return error
 func InitConfig(configPath string) error {
