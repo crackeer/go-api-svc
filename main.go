@@ -14,8 +14,6 @@ import (
 var configPath string
 
 func main() {
-	fmt.Println(os.Args)
-
 	flag.StringVar(&configPath, "c", "./config/app.yaml", "config file")
 	flag.Parse()
 

@@ -10,6 +10,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// Run ...
+//  @param config
+//  @return error
 func Run(config *define.AppConfig) error {
 
 	router := gin.New()
@@ -21,6 +24,8 @@ func Run(config *define.AppConfig) error {
 	dbRouter.POST("update/:table", table.Update)
 	dbRouter.POST("delete/:table", table.Delete)
 	dbRouter.GET("distinct/:table", table.Distinct)
+	dbRouter.GET("field/:table/:field", table.Solo)
+
 	dbRouter.POST("exec/sql", database.Exec)
 	dbRouter.GET("tables", database.Tables)
 

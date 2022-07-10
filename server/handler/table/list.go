@@ -1,8 +1,6 @@
 package table
 
 import (
-	"fmt"
-
 	ginhelper "github.com/crackeer/gopkg/gin"
 	"github.com/crackeer/gopkg/util"
 	"github.com/gin-gonic/gin"
@@ -19,7 +17,6 @@ func List(ctx *gin.Context) {
 	params := ginhelper.AllParams(ctx)
 	page := util.LoadMap(params).GetInt64("_page", 1)
 	pageSize := util.LoadMap(params).GetInt64("_page_size", 20)
-	fmt.Println(params)
 	delete(params, "_page")
 	delete(params, "_page_size")
 
