@@ -1,6 +1,6 @@
 product: &product
   driver: "sqlite"
-  file: "d:/github/go-api-svc/sample/sqlite3.db"
+  file: "/Users/liuhu016/Downloads/database.db"
 
 develop:
   <<: *product
